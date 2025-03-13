@@ -245,3 +245,91 @@ Créez une page complète incluant :
 - Une liste de vos compétences
 - Des liens vers vos réseaux sociaux
 - Un paragraphe de présentation
+
+### Les tableaux
+
+A présent, nous allons voir les éléments un peu plus complexe ! les tableaux !
+
+Un tableau est une structure de données qui organise l'information en lignes et colonnes. En HTML, les tableaux permettent de présenter des données de manière structurée et lisible.
+
+#### Définitions balises nécessaires:
+- **`<table>` :** Balise conteneur pour un tableau
+- **`<tr>` :** Table Row, représente une ligne du tableau
+- **`<td>` :** Table Data, représente une cellule
+- **`<th>` :** Table Header, utilisé pour les en-têtes de colonnes ou lignes
+
+#### Petit exemple:
+
+```html
+<table border="1">
+    <thead>
+        <tr>
+            <th>Nom</th>
+            <th>Âge</th>
+            <th>Ville</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Marie</td>
+            <td>28</td>
+            <td>Paris</td>
+        </tr>
+        <tr>
+            <td>Jean</td>
+            <td>35</td>
+            <td>Lyon</td>
+        </tr>
+    </tbody>
+</table>
+```
+
+#### Exercices
+
+1. Créez un tableau de votre collection personnelle (livres, films, etc.)
+2. Utilisez `<thead>` et `<tbody>`
+3. Ajoutez au moins 5 lignes de données
+4. Expérimentez avec la mise en forme basic
+
+### Les formulaires
+
+Un formulaire est un ensemble d'éléments interactifs permettant aux utilisateurs de saisir et d'envoyer des données à un serveur web.
+
+#### Définitions balises nécessaires:
+- **`<form>` :** Balise conteneur de tous les éléments de formulaire
+- **`<input>` :** Élément de saisie polyvalent
+- **Types d'input :** text, password, email, number, date, checkbox, radio
+- **`<label>` :** Étiquette associée à un champ de formulaire
+- **`<button>` :** Bouton de soumission ou d'action
+- `<fieldset>`: Petit encadrer pour créer des blocks
+
+#### Petit exemple
+
+```html
+<form>
+    <h2>Formulaire de Contact</h2>
+    
+    <label for="nom">Nom :</label>
+    <input type="text" id="nom" name="nom" required>
+    
+    <label for="email">Email :</label>
+    <input type="email" id="email" name="email" required>
+    
+    <label for="message">Message :</label>
+    <textarea id="message" name="message" rows="4"></textarea>
+    
+    <fieldset>
+        <legend>Préférences</legend>
+        <input type="checkbox" id="newsletter" name="newsletter">
+        <label for="newsletter">Abonnement newsletter</label>
+    </fieldset>
+    
+    <button type="submit">Envoyer</button>
+</form>
+```
+
+#### Exercices
+1. Créez un formulaire d'inscription à un site
+2. Incluez différents types de champs
+3. Utilisez `<label>` et `id` correspondants
+4. Ajoutez des champs obligatoires

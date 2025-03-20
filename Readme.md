@@ -349,28 +349,36 @@ Les éléments sémantiques donnent du sens à la structure d'une page web, au-d
 #### Petit exemple
 
 ```html
-<body>
-    <header>
-        <h1>Mon Site Web</h1>
-        <nav>
-            <a href="#accueil">Accueil</a>
-            <a href="#about">À propos</a>
-            <a href="#contact">Contact</a>
-        </nav>
-    </header>
-
-    <main>
-        <section id="accueil">
-            <h2>Bienvenue</h2>
-            <article>
-                <h3>Dernière actualité</h3>
-                <p>Contenu de l'article...</p>
-            </article>
-        </section>
-    </main>
-
-    <footer>
-        <p>© 2024 Mon Site</p>
-    </footer>
-</body>
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+	    <meta charset="UTF-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	    <title>DEV WEB | index.html</title>
+	</head>
+	<body>
+	    <header>
+	        <h1>Mon Site Web</h1>
+	        <nav>
+	            <a href="#accueil">Accueil</a>
+	            <a href="#about">À propos</a>
+	            <a href="#contact">Contact</a>
+	        </nav>
+	    </header>
+	
+	    <main>
+	        <section id="accueil">
+	            <h2>Bienvenue</h2>
+	            <article>
+	                <h3>Dernière actualité</h3>
+	                <p>Contenu de l'article...</p>
+	            </article>
+	        </section>
+	    </main>
+	
+	    <footer>
+	        <p>© 2024 Mon Site</p>
+	    </footer>
+	</body>
+</html>
 ```

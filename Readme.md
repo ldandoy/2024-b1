@@ -1,6 +1,7 @@
 
 # Introduction au Développement Web
 
+Ma chaine YT: https://www.youtube.com/overconsulting
 
 ## Comment fonctionne le web ?
 
@@ -334,7 +335,6 @@ Un formulaire est un ensemble d'éléments interactifs permettant aux utilisateu
 3. Utilisez `<label>` et `id` correspondants
 4. Ajoutez des champs obligatoires
 
-
 ### Éléments Sémantiques
 
 Les éléments sémantiques donnent du sens à la structure d'une page web, au-delà de sa simple apparence visuelle.
@@ -382,3 +382,87 @@ Les éléments sémantiques donnent du sens à la structure d'une page web, au-d
 	</body>
 </html>
 ```
+
+## CSS
+
+### Qu'est-ce que le CSS ?
+
+Le CSS (Cascading Style Sheets ou Feuilles de Style en Cascade) est un langage de stylisation qui permet de mettre en forme et de présenter du contenu HTML. Il contrôle l'apparence visuelle des éléments web.
+
+#### Définitions clés
+- **Sélecteur :** Identifie les éléments HTML à styliser
+- **Propriété :** Caractéristique à modifier (couleur, taille, etc.)
+- **Valeur :** Spécification de la modification
+- **Syntaxe CSS :** `selecteur { propriete: valeur; }`
+
+### Comment écrire le CSS ?
+
+Soit dans un élément HTML
+
+```html
+<p style="color: red;">Texte en rouge</p>
+```
+
+Soit dans le html à l'intérieur de balise
+
+```html
+<style> p { color: red; } </style>
+```
+
+Soit dans une fichier css
+
+main.css
+```css
+p { color: red; }
+```
+
+Par contre il faudra dire au fichier HTML d'inclure le fichier CSS.
+
+```html
+<link rel="stylesheet" href="main.css">
+```
+
+#### Petit exemple
+
+```html
+
+<html>
+<head>
+	<style>
+		/* CSS */ 
+		.carte {
+			border: 1px solid #ccc; 
+			padding: 15px; 
+		} 
+		
+		#titre-principal { 
+			color: navy; 
+			text-align: center;
+		}
+		
+		p { font-size: 16px; line-height: 1.5; }
+	</style>
+</head>
+<body>
+	<!-- HTML -->
+	<div class="carte">
+		<h1 id="titre-principal">Mon Titre</h1>
+		<p>Un paragraphe de texte.</p>
+	</div>
+</body>
+```
+
+#### Types de Sélecteurs
+
+**Sélecteur de balise :** Cible tous les éléments d'un type
+
+`p { color: blue; }`
+
+**Sélecteur de classe :** Cible des éléments avec une classe spécifique
+
+`.titre { font-weight: bold; }`
+
+**Sélecteur d'ID :** Cible un élément unique
+
+`#entete { background-color: gray; }`
+

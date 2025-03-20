@@ -333,3 +333,44 @@ Un formulaire est un ensemble d'éléments interactifs permettant aux utilisateu
 2. Incluez différents types de champs
 3. Utilisez `<label>` et `id` correspondants
 4. Ajoutez des champs obligatoires
+
+
+### Éléments Sémantiques
+
+Les éléments sémantiques donnent du sens à la structure d'une page web, au-delà de sa simple apparence visuelle.
+
+#### Définitions balises nécessaires:
+- **`<header>` :** En-tête de page ou de section
+- **`<nav>` :** Zone de navigation
+- **`<section>` :** Section thématique de contenu
+- **`<article>` :** Contenu autonome et indépendant
+- **`<footer>` :** Pied de page
+
+#### Petit exemple
+
+```html
+<body>
+    <header>
+        <h1>Mon Site Web</h1>
+        <nav>
+            <a href="#accueil">Accueil</a>
+            <a href="#about">À propos</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="accueil">
+            <h2>Bienvenue</h2>
+            <article>
+                <h3>Dernière actualité</h3>
+                <p>Contenu de l'article...</p>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2024 Mon Site</p>
+    </footer>
+</body>
+```

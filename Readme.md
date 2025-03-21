@@ -237,6 +237,8 @@ Pour aller plus loin, on va ajouter une légende à notre image
 | **Utilisation principale**     | Regrouper plusieurs éléments              | Modifier une partie d'un texte ou élément inline |
 | **Peut contenir…**             | Titres, paragraphes, images, listes, etc. | Texte, liens, icônes, etc.                       |
 | **Impact sur la mise en page** | Crée une nouvelle ligne                   | Aucun impact sur la structure                    |
+
+
 ## Projet : Page de Présentation Personnelle
 
 Créez une page complète incluant :
@@ -847,7 +849,8 @@ Crée un `div` centré en plein écran.
 }
 ```
 
-#### Petit exercice
+## Projet : Page de Présentation Personnelle (suite)
+
 1. Modifier votre portfolio pour le rendre plus moderne
 2. Ajouter une section projets
 3. Ajouter un ou deux projets
@@ -862,5 +865,8 @@ Crée un `div` centré en plein écran.
     background-color: lightblue;
   }
 }
-
 ```
+
+## Projet : Page de Présentation Personnelle
+
+Rendre votre portfolio responsive

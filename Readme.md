@@ -466,3 +466,318 @@ Par contre il faudra dire au fichier HTML d'inclure le fichier CSS.
 
 `#entete { background-color: gray; }`
 
+### Formats de Couleurs
+
+#### Mots-clés Prédéfinis
+
+```css
+.texte-rouge { color: red; } 
+.fond-vert { background-color: green; } 
+.bordure-bleu { border-color: blue; }
+```
+
+#### Notation Hexadécimale
+
+Format le plus courant, représente les couleurs par des codes hexadécimaux
+
+```css
+.couleur-perso { 
+	color: #FF0000; /* Rouge vif */ 
+	background-color: #00FF00; /* Vert vif */ 
+	border-color: #00F; /* Bleu vif */ 
+}
+```
+
+**Structure du code hexadécimal**
+- 6 caractères : `#RRGGBB` ou trois #RGB attention alors la valeur R, G et B sera doublé
+- Chaque paire représente l'intensité (00 à FF)
+- `#000000` = Noir
+- `#FFFFFF` = Blanc
+- 
+
+#### RGB et RGBA
+
+Permet de définir les couleurs par leurs composantes Rouge, Vert, Bleu.
+
+```css
+.couleur-rgb { 
+	color: rgb(255, 0, 0); /* Rouge vif */ 
+	background-color: rgb(0, 255, 0); /* Vert vif */ 
+} 
+
+.couleur-rgba { 
+	background-color: rgba(0, 0, 255, 0.5); /* Bleu semi-transparent */ 
+}
+```
+
+**Caractéristiques**
+- Valeurs de 0 à 255 pour chaque couleur
+- `rgba()` ajoute un canal alpha (transparence)
+- 0 = aucune intensité
+- 255 = intensité maximale
+
+#### HSL et HSLA
+
+Représente les couleurs par Teinte, Saturation, Luminosité.
+
+```css
+.couleur-hsl {
+    color: hsl(0, 100%, 50%);     /* Rouge vif */
+    background-color: hsl(120, 100%, 50%);  /* Vert vif */
+}
+
+.couleur-hsla {
+    background-color: hsla(240, 100%, 50%, 0.7);  /* Bleu semi-transparent */
+}
+```
+
+**Composantes**
+
+- Teinte (0-360°) : position sur le cercle chromatique
+    - 0/360° = Rouge
+    - 120° = Vert
+    - 240° = Bleu
+- Saturation (0-100%) : intensité de la couleur
+- Luminosité (0-100%) : clarté de la couleur
+- Canal alpha (0-1) optionnel pour la transparence
+
+### Ressources
+
+Adobe: https://color.adobe.com/fr/
+Palette: https://colorhunt.co/
+
+### Tailles en CSS : px, em, rem, %, vw, vh, etc.
+
+#### Les unités absolues
+
+**Pixel (`px`)**
+- 1 `px` correspond à un point sur l'écran.
+- Il est couramment utilisé pour définir des tailles précises.
+
+```css
+h1 {
+  font-size: 32px; /* La taille du texte est de 32 pixels */
+}
+```
+#### Les unités relatives
+
+**`em` : relatif à la taille de la police du parent**
+- `1em` correspond à la taille de la police du parent direct.
+- `2em` signifie **deux fois** la taille de la police du parent.
+
+```css
+p {
+  font-size: 16px;
+}
+button {
+  font-size: 1.5em; /* 1.5 fois la taille du texte du parent */
+}
+```
+
+**`rem` : relatif à la taille de la police du `<html>` (root)**
+- `1rem` est basé sur la taille définie pour l’élément `<html>`.
+- Par défaut, la taille du texte dans `<html>` est de `16px`, donc `1rem = 16px`.
+
+```css
+html {
+  font-size: 20px;
+}
+h1 {
+  font-size: 2rem; /* 2 * 20px = 40px */
+}
+```
+
+**Pourcentages (`%`)**
+- Dépend de la taille de son parent.
+- Très utile pour rendre les mises en page **responsives**.
+
+```css
+div {
+  width: 50%; /* Prend la moitié de la largeur du parent */
+}
+```
+
+**`vw` et `vh` : unités basées sur la taille de l’écran**
+- `vw` (viewport width) : 1 `vw` = 1% de la largeur de l’écran.
+- `vh` (viewport height) : 1 `vh` = 1% de la hauteur de l’écran.
+
+```css
+h1 {
+  font-size: 10vw; /* 10% de la largeur de l’écran */
+}
+```
+
+**`min()` et `max()` : tailles adaptatives**
+
+Ces fonctions permettent de définir des tailles qui s’adaptent dynamiquement.
+
+```css
+p {
+  font-size: min(5vw, 24px); /* Ne dépassera pas 24px même si 5vw est plus grand */
+}
+```
+
+#### Quand utiliser quelle unité ?
+
+|**Unité**|**Usage recommandé**|
+|---|---|
+|`px`|Petits éléments fixes (bordures, icônes)|
+|`em`|Espacements internes (`padding`, `margin`)|
+|`rem`|Tailles de texte principales|
+|`%`|Largeurs et hauteurs flexibles|
+|`vw`, `vh`|Tailles dynamiques selon l’écran|
+|`min()`, `max()`|Pour des tailles adaptatives|
+
+### Modèle de boîte (Box Model)
+
+Chaque élément HTML est une boîte avec :
+- `content` (le contenu)
+- `padding` (espace intérieur)
+- `border` (bordure)
+- `margin` (espace extérieur)
+
+```css
+div {
+  width: 200px;
+  padding: 20px;
+  border: 5px solid black;
+  margin: 10px;
+  box-sizing: border-box;
+}
+
+```
+
+### Positionnement des éléments
+
+Les valeurs de `position` :
+- `static` (par défaut)
+- `relative` (par rapport à sa position normale)
+- `absolute` (par rapport à l’élément parent positionné)
+- `fixed` (fixé à l’écran)
+
+
+```css
+.box { position: absolute; top: 50px; left: 50px; }
+```
+
+### Responsive Design et Media Queries
+
+```css
+@media (max-width: 600px) {
+  body {
+    background-color: lightblue;
+  }
+}
+
+```
+
+### Flexbox (Flexible Box Layout)
+
+Flexbox est un modèle de mise en page **unidimensionnel** qui aligne les éléments **horizontalement** ou **verticalement** de manière efficace.
+
+```css
+.container {
+    display: flex;
+}
+```
+
+#### Direction des éléments : `flex-direction`
+
+```css
+.container {
+    display: flex;
+    flex-direction: row; /* Par défaut : en ligne */
+}
+```
+
+**Valeurs possibles** :
+- `row` (par défaut) → de gauche à droite
+- `row-reverse` → de droite à gauche
+- `column` → de haut en bas
+- `column-reverse` → de bas en haut
+
+#### Alignement des éléments : `justify-content` (axe principal)
+
+```css
+.container {
+    display: flex;
+    justify-content: center;
+}
+```
+
+**Valeurs possibles** :
+- `flex-start` (par défaut) : alignés au début
+- `flex-end` : alignés à la fin
+- `center` : centrés
+- `space-between` : espace entre les éléments
+- `space-around` : espace autour des éléments
+
+#### Alignement vertical : `align-items` (axe secondaire)
+
+```css
+.container {
+    display: flex;
+    align-items: center;
+}
+```
+
+**Valeurs possibles** :
+- `flex-start` (en haut)
+- `flex-end` (en bas)
+- `center` (au milieu)
+- `stretch` (prend toute la hauteur)
+- `baseline` (alignement sur la ligne de base du texte)
+
+#### Gestion du retour à la ligne : `flex-wrap`
+
+Si les éléments ne rentrent pas sur une seule ligne, ils peuvent passer à la ligne suivante.
+
+```css
+.container {
+    display: flex;
+    flex-wrap: wrap;
+}
+```
+
+**Valeurs possibles** :
+- `nowrap` (par défaut) : tous les éléments restent sur une seule ligne
+- `wrap` : les éléments passent à la ligne si besoin
+- `wrap-reverse` : les lignes sont inversées
+
+#### Contrôle individuel des éléments : `flex-grow`, `flex-shrink`, `flex-basis`
+
+```css
+.item {
+    flex-grow: 1; /* L'élément prend tout l’espace disponible */
+}
+```
+
+**Valeurs possibles** :
+- `flex-grow: 1;` → L’élément s’agrandit pour occuper tout l’espace.
+- `flex-shrink: 1;` → L’élément peut se réduire en cas de manque de place.
+- `flex-basis: 200px;` → Taille de base de l’élément.
+
+#### Exercice Centrer un élément en Flexbox
+
+Crée un `div` centré en plein écran.
+
+```css
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: lightgray;
+}
+.box {
+    width: 200px;
+    height: 200px;
+    background-color: blue;
+}
+```
+
+#### Petite exercices
+1. Modifier votre portfolio pour le rendre plus moderne
+2. Ajouter une section projets
+3. Ajouter un ou deux projets
+4. Créez une page par projet qui met en avant ce projet

@@ -425,31 +425,32 @@ Par contre il faudra dire au fichier HTML d'inclure le fichier CSS.
 #### Petit exemple
 
 ```html
-
-<html>
-<head>
-	<style>
-		/* CSS */ 
-		.carte {
-			border: 1px solid #ccc; 
-			padding: 15px; 
-		} 
-		
-		#titre-principal { 
-			color: navy; 
-			text-align: center;
-		}
-		
-		p { font-size: 16px; line-height: 1.5; }
-	</style>
-</head>
-<body>
-	<!-- HTML -->
-	<div class="carte">
-		<h1 id="titre-principal">Mon Titre</h1>
-		<p>Un paragraphe de texte.</p>
-	</div>
-</body>
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <style>
+            /* CSS */ 
+            .carte {
+                border: 1px solid #ccc; 
+                padding: 15px; 
+            } 
+            
+            #titre-principal { 
+                color: navy; 
+                text-align: center;
+            }
+            
+            p { font-size: 16px; line-height: 1.5; }
+        </style>
+    </head>
+    <body>
+        <!-- HTML -->
+        <div class="carte">
+            <h1 id="titre-principal">Mon Titre</h1>
+            <p>Un paragraphe de texte.</p>
+        </div>
+    </body>
+</html>
 ```
 
 #### Types de Sélecteurs
@@ -660,16 +661,86 @@ Les valeurs de `position` :
 .box { position: absolute; top: 50px; left: 50px; }
 ```
 
-### Responsive Design et Media Queries
+### Les fonts
 
 ```css
-@media (max-width: 600px) {
-  body {
-    background-color: lightblue;
-  }
+.font {
+    color : red; /* Couleur du text */
+    font-size: 14px; /* Tailles de la police */
+    font-family: Arial, Helvetica, sans-serif; /* choix de police */
+    font-weight: bold; /* Grosseur de la police */
+    font-style: italic; /* Pour mettre en italic */
+    text-align: center; /* Pour centrer du texte */
+}
+```
+
+### Les bordures
+
+#### border-width
+
+```css
+p {
+    border-width: 2px;
+}
+```
+
+#### border-style
+
+```css
+div {
+    border-style: "dotted";
+}
+```
+
+#### border-color
+
+```css
+div {
+    border-color: red;
+}
+```
+
+#### border-radius
+
+```css
+div {
+    border-radius: 2px;
+}
+```
+
+Exemple complet
+
+```css
+.box1 {
+    border: 2px silver dotted;
 }
 
+.box2 {
+    border: 5px pink dashed;
+}
+
+.out-bordered {
+    padding: 10px 20px;
+    border-radius: 15px;
+    color: lightcoral;
+    border: 1px solid lightcoral;
+}
 ```
+
+```html
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <title>Test CSS bordure</title>
+    </head>
+    <body>
+        <div class="box1"></div>
+        <div class="box2"></div>
+        <div class="out-bordered"></div>
+    </body>
+</html>
+```
+
 
 ### Flexbox (Flexible Box Layout)
 
@@ -776,8 +847,20 @@ Crée un `div` centré en plein écran.
 }
 ```
 
-#### Petite exercices
+#### Petit exercice
 1. Modifier votre portfolio pour le rendre plus moderne
 2. Ajouter une section projets
 3. Ajouter un ou deux projets
 4. Créez une page par projet qui met en avant ce projet
+
+
+### Responsive Design et Media Queries
+
+```css
+@media (max-width: 600px) {
+  body {
+    background-color: lightblue;
+  }
+}
+
+```
